@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Lifeline</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .slideDeck {display:none;}
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav id = "topNav"class="nav-wrapper">
+            <div class="LeftSide">
+                <a href="index.html">Lifeline</a>
+            </div>
+
+            <div class="RightSide">
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
+        </nav>
+
+        <section class="ContentWrapper">
+            <div class="ImageItemsWrapper">
+                <div class="ImageItemWrapper">
+                    <div class="MainBackgroundImage" id="parallax"> 
+                            <div class="ImageTextWrapper">
+                                <div class="LogoWrapper">
+                                    <img class="slideDeck" src="baby1.jpg" style="width: device-width; height: 888px; object-fit: cover;">
+                                    <img class="slideDeck" src="baby2.jpg" style="width: device-width; height: 888px; object-fit: cover;">
+                                    <img class="slideDeck" src="baby3.jpg" style="width: device-width; height: 888px; object-fit: cover;">
+                                </div> 
+                            </div>
+                            <div class="Subtitle"> <h1>Pregnancy <span class="light">cri</span>sis <span class="underlined">resources</span></h1>
+                            
+                            <p>For expecting mothers in need</p>
+                            </div>
+                        
+                    </div>
+                    <div class = "overlay" />
+                    
+                </div>
+            </div>
+        </section>
+        <section class="resourcesMenu">
+            <div class="resourcesContainer">
+                <div class="creationHeader">
+                    <h3 class="menuTitle">Resources' Menu</h3>
+                    <div class="buttons" id="buttons"></div>
+                    <div class="grid" id="grid"></div>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span id="closeModal" class="close">&times;</span>
+                            <img id="modalImage" src="" alt="">
+                            <h2 id="modalTitle"></h2>
+                            <p id="modalType"></p>
+                            <p id="modalDescription"></p>
+                            <div>  
+                                <button id="prevBtn">- Previous</button> 
+                                <button id="visitBtn">Visit Website</button> 
+                                <button id="nextBtn">Next +</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="main.js?v=5"></script>
+<script>
+const imageItems = document.querySelectorAll('.ImageItemWrapper');
+const imageTexts = document.querySelectorAll('.Subtitle');
+imageItems.forEach(imageItem => {
+    imageItem.addEventListener('mouseover', () => {
+        console.log(imageItem.childNodes[1].classList)
+        imageItem.childNodes[1].classList.add('imageDarken');
+        imageTexts.forEach(imageText => {
+            imageText.classList.add('lighterText');
+        });
+    });
+    imageItem.addEventListener('mouseout', () => {
+        console.log(imageItem.childNodes[1].classList)
+        imageItem.childNodes[1].classList.remove('imageDarken');
+        imageTexts.forEach(imageText => {
+            imageText.classList.remove('lighterText');
+        });
+    });
+});
+
+var slideIndex = 0;
+sliding();
+
+function sliding() {
+    var i;
+    var x = document.getElementsByClassName("slideDeck");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
+    setTimeout(sliding, 5500); 
+}
+
+const parallax = document.getElementById
+("parallax");
+
+window.addEventListener("scroll", function(){
+    let offset = window.pageYOffset;
+    parallax.style.backgroundPositionY = offset * 0.7 + "px";
+})
+var navbar = document.getElementById("topNav");
+var sticky = navbar.offsetTop;
+
+window.onscroll = function(){
+    if (window.pageYOffset >= sticky){
+        navbar.classList.add("sticky")
+    }
+    else {
+        navbar.classList.remove(sticky);
+    }
+};
+</script>
+</html>

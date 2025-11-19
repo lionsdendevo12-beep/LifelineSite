@@ -1,0 +1,350 @@
+/* Master Styles */
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@600&display=swap');
+
+body {
+   font-family: Arial, Helvetica, sans-serif; margin:0px
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr;
+}
+
+/* Nav styles */
+.nav-wrapper {
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    background-color: rgba(175, 44, 179, 0.651);
+    padding: 10px 50px;
+    z-index: 100;
+}
+
+.image {
+    padding-left:200px;
+}
+
+.LeftSide {
+    height: 92px;
+    border-bottom: 1px solid transparent;
+    margin-left: 22px;
+}
+
+.LeftSide a{
+    color: rgb(255, 255, 255);
+    font-family:'Asap', sans-serif;
+    font-weight: 100;
+    font-size: 4.5rem;
+    text-decoration: none;
+}
+
+.LeftSide a:hover{
+    color:rgb(129, 129, 129);
+}
+
+.RightSide {
+    margin-right: 125px;
+}
+
+/* Image styles */
+
+.ImageItemsWrapper {
+    display: block;
+    flex: 3fr;
+    transition: 1s;
+}
+
+.ImageItemWrapper {
+    position: relative;
+}
+
+.MainBackgroundImage {
+    height: 888px;
+    width: 1fr;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sticky {
+    position:fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .nav-wrapper {
+    padding-top: 60px;
+}
+
+.overlay {
+    content: " ";
+    background: rgba(239, 185, 255, 0.33);
+    overflow: hidden;
+    height: 100%;
+    width: 100vw;
+    z-index: 5;
+    display: block;
+    position:absolute;
+    top:0;
+    left: 0;
+    right: 0;
+
+}
+
+.slideDeck {
+    height: fit-content(712px);
+    width: 100vw;
+    max-height: 100vh ;
+    right: 0;
+    
+}
+
+.ImageTextWrapper {
+    position: relative;
+    top: 0;
+    display: flex;
+    width: 100%;
+    /* justify-content:top; */
+    align-items: center;
+    height: auto;
+    text-align: center;
+}
+
+.Subtitle {
+   position: absolute;
+   top: 50%;
+   left:0;
+   right: 0;
+   width: 100%;
+   /* height: 100%; */
+   /* justify-content:right; */
+   text-align: center;
+   margin: 0;
+   transform: translate(0, -50%);
+
+   /* padding-top: 325px;*/ 
+   z-index: 10;
+}
+
+.Subtitle h1 {
+    color: rgb(250, 250, 250);
+    font-family: "Asap", sans-serif;
+    font-size: 3rem;
+    z-index: 10;
+}
+
+.Subtitle p::before {
+    background-color: rgb(255, 255, 255);
+    content:"";
+    display:block;
+    height: 4px;
+    margin:1.5rem auto;
+    width: 8rem;
+}
+
+.Subtitle p {
+    color: rgb(255, 255, 255);
+    font-family: "Asap", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.lighterText h1 .underlined{
+    text-decoration: underline;
+    text-decoration-color:rgb(255, 255, 255);
+}
+
+/* Resources' Menu*/
+.creationHeader{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(248, 113, 226, 0.158);
+}
+
+.menuTitle{
+    padding-top:18px;
+    font-size: 3rem;
+    font-family: "Asap", sans-serif;
+    height:110px;
+    color: rgb(0, 0, 0);
+}
+
+.IconItemsWrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+.IconItemWrapper{
+    position:relative;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.IconBackgroundImage{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+}
+
+
+.apparitionImg {
+    position:relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 380px;
+    width: 250px;  
+}
+
+
+.IconTextWrapper{
+    position:absolute;
+    top:0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-left: 35px;
+    padding-right: 90px;
+}
+
+.IconTitle p{
+    position: relative;
+    font-family: "Asap", sans-serif;
+    font-size: 1.5rem;
+    padding-top:360px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+.buttons { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px; 
+    gap: 10px;
+}
+.buttons button {
+    margin: 5px; padding: 8px 12px;
+    border: none; border-radius: 6px;
+    cursor: pointer; background: #ddd;
+}
+.buttons { margin-bottom: 20px; }
+.buttons button {
+    margin: 5px; padding: 8px 12px;
+    border: none; border-radius: 6px;
+    cursor: pointer; background: #ddd;
+}
+.buttons button.active { background: #007bff; color: white; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
+.card:hover { 
+    transform: translateY(-2px);
+    background: #eef6ff; 
+}
+.card img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.card h2 {
+    margin: 0;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card p { font-size: 12px; color: gray; }
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center; align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+.modal-content img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.modal-content h2 { margin-top: 0; }
+.modal-content p { margin: 10px 0; }
+.modal-content button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+}
+.close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+.close:hover { color: black; }
